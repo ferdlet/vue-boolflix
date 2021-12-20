@@ -20,13 +20,26 @@ export default {
         ricerca() {
             axios.get("https://api.themoviedb.org/3/search/movie", {
                 params: {
-                    api_key: 'a4a9b8d54eb726132cc1223964c218f1',
+                    api_key: dataShared.apiKey,
                     query: dataShared.inputRicerca,
                     language: 'it_IT'
                 }
             })
             .then((response) => {
                 dataShared.films = response.data.results;
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+            axios.get("https://api.themoviedb.org/3/search/tv", {
+                params: {
+                    api_key: dataShared.apiKey,
+                    query: dataShared.inputRicerca,
+                    language: 'it_IT'
+                }
+            })
+            .then((response) => {
+                dataShared.series = response.data.results;
             })
             .catch((error) => {
                 console.log(error);
