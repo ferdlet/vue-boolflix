@@ -16,16 +16,15 @@ export default {
         FilmsList,
         SeriesList,
     },
-    data() {
-        return {
-            
-        }
-    }
-
 }
 </script>
 
 <style lang="scss" scoped>
 @import '../../assets/style/global.scss';
 
+main {
+    padding: 50px 30px;
+    min-height: calc(100vh - 80px);
+    background-color: #181818;
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <section id="lista-series">
+    <section class="list">
         <h2>Serie TV</h2>
         <ul>
             <li v-for="(serie, index) in dataShared.series" :key="index">
@@ -13,7 +13,6 @@
 import dataShared from '../../share/dataShared.js';
 import Card from '../elements/Card.vue';
 
-
 export default {
     name: 'SeriesList',
     components: {
@@ -24,14 +23,12 @@ export default {
             dataShared,
         }
     },
-    methods: {
-
-    }
 }
 </script>
 
 <style lang="scss" scoped>
 @import '../../assets/style/global.scss';
+@import '../../assets/style/list.scss';
 
 
 </style>

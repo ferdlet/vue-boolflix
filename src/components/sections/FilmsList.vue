@@ -1,5 +1,5 @@
 <template>
-    <section class="lista-films">
+    <section class="list">
         <h2>Films</h2>
         <ul>
             <li v-for="(film, index) in dataShared.films" :key="index">
@@ -25,15 +25,13 @@ export default {
             flag: '',
         }
     },
-    methods: {
-
-
-    }
 }
 </script>
 
 <style lang="scss" scoped>
 @import '../../assets/style/global.scss';
+@import '../../assets/style/list.scss';
+
 
 
 </style>
