@@ -12,5 +12,6 @@ export default Vue.observable({
         es: 'https://cdn-icons-png.flaticon.com/512/197/197593.png',
         fr: 'https://cdn-icons-png.flaticon.com/512/197/197560.png',
         de: 'https://cdn-icons-png.flaticon.com/512/197/197571.png'
-    }
+    },
+    
 });

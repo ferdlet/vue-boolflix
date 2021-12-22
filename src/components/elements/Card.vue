@@ -43,6 +43,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/style/global.scss';
+
 .card {
     > img {
         height: 16px;

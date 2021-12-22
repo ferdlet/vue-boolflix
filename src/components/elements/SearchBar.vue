@@ -53,5 +53,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/style/global.scss';
+
+input {
+    padding: 5px 8px;
+}
+
+button {
+    margin-left: 20px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    padding: 5px 8px;
+    font-weight: bold;
+    &:active {
+        -webkit-box-shadow: 0px 0px 10px 3px #828282; 
+        box-shadow: 0px 0px 10px 3px #828282;
+    }
+}
 
 </style>
