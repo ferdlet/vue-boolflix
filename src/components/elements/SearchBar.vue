@@ -1,7 +1,9 @@
 <template>
     <div class="search-bar">
-        <input type="text" v-model="dataShared.inputRicerca">
-        <button @click="ricerca()">Ricerca</button>
+        <form @submit.prevent="ricerca()">
+            <input type="text" v-model="dataShared.inputRicerca">
+            <button>Ricerca</button>
+        </form>
     </div>
 </template>
 
@@ -22,7 +24,7 @@ export default {
                 params: {
                     api_key: dataShared.apiKey,
                     query: dataShared.inputRicerca,
-                    language: 'it_IT'
+                    language: 'it-IT'
                 }
             })
             .then((response) => {
@@ -35,7 +37,7 @@ export default {
                 params: {
                     api_key: dataShared.apiKey,
                     query: dataShared.inputRicerca,
-                    language: 'it_IT'
+                    language: 'it-IT'
                 }
             })
             .then((response) => {
