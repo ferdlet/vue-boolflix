@@ -1,11 +1,13 @@
 <template>
     <section class="list">
         <h2>Films</h2>
-        <ul>
+        <div class="empty" v-if="dataShared.films.length == 0"><h2>Nessun risultato trovato!</h2></div>
+        <ul v-else>
             <li v-for="(film, index) in dataShared.films" :key="index">
                 <Card :info="film"/>
             </li>
         </ul>
+
     </section>
 </template>
 
@@ -35,6 +37,7 @@ export default {
         })
         .then((response) => {
             dataShared.films = response.data.results;
+            console.log('we' + dataShared.films);
         })
         .catch((error) => {
             console.log(error);

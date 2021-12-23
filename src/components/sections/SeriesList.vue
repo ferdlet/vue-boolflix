@@ -1,7 +1,8 @@
 <template>
-    <section class="list">
+    <section id="series" class="list">
         <h2>Serie TV</h2>
-        <ul>
+        <div class="empty" v-if="dataShared.series.length == 0"><h2>Nessun risultato trovato!</h2></div>
+        <ul v-else>
             <li v-for="(serie, index) in dataShared.series" :key="index">
                 <Card :info="serie"/>
             </li>
@@ -47,5 +48,8 @@ export default {
 @import '../../assets/style/global.scss';
 @import '../../assets/style/list.scss';
 
+#series {
+    margin-top: 60px;
+}
 
 </style>
