@@ -12,6 +12,8 @@
 <script>
 import dataShared from '../../share/dataShared.js';
 import Card from '../elements/Card.vue';
+import axios from 'axios';
+
 
 export default {
     name: 'SeriesList',
@@ -23,6 +25,21 @@ export default {
             dataShared,
         }
     },
+    created() {
+        axios.get("https://api.themoviedb.org/3/tv/popular", {
+            params: {
+                api_key: dataShared.apiKey,
+                language: 'it-IT'
+            }
+        })
+        .then((response) => {
+            dataShared.series = response.data.results;
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    },
+
 }
 </script>
 

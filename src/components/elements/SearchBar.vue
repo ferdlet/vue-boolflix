@@ -20,32 +20,34 @@ export default {
     },
     methods: {
         ricerca() {
-            axios.get("https://api.themoviedb.org/3/search/movie", {
-                params: {
-                    api_key: dataShared.apiKey,
-                    query: dataShared.inputRicerca,
-                    language: 'it-IT'
-                }
-            })
-            .then((response) => {
-                dataShared.films = response.data.results;
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-            axios.get("https://api.themoviedb.org/3/search/tv", {
-                params: {
-                    api_key: dataShared.apiKey,
-                    query: dataShared.inputRicerca,
-                    language: 'it-IT'
-                }
-            })
-            .then((response) => {
-                dataShared.series = response.data.results;
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+            if (dataShared.inputRicerca) {
+                axios.get("https://api.themoviedb.org/3/search/movie", {
+                    params: {
+                        api_key: dataShared.apiKey,
+                        query: dataShared.inputRicerca,
+                        language: 'it-IT'
+                    }
+                })
+                .then((response) => {
+                    dataShared.films = response.data.results;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+                axios.get("https://api.themoviedb.org/3/search/tv", {
+                    params: {
+                        api_key: dataShared.apiKey,
+                        query: dataShared.inputRicerca,
+                        language: 'it-IT'
+                    }
+                })
+                .then((response) => {
+                    dataShared.series = response.data.results;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+            }
         },
 
     },
@@ -54,6 +56,10 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../assets/style/global.scss';
+
+form {
+    display: flex;
+}
 
 input {
     padding: 5px 8px;

@@ -1,14 +1,13 @@
 <template>
     <div class="card">
-
         <div class="container-card">
             <img class="poster" v-if="info.poster_path" :src="'https://image.tmdb.org/t/p/w342/' + info.poster_path" :alt="info.name || info.title">
             <div class="no-poster" v-else>
                 <span>Nessuna copertina disponibile</span>
             </div>
             <div class="item-info">
-                <h3 v-if="info.title || info.name">{{info.title || info.name}}</h3>
-                <h4 v-else>{{info.original_title || info.original_name}}</h4>
+                <h3 v-if="info.title || info.name"> Titolo: <mark>{{info.title || info.name}}</mark></h3>
+                <h3>Titolo originale: <mark>{{info.original_title || info.original_name}}</mark></h3>
                 <div class="voto" v-if="Math.ceil(info.vote_average / 2) > 0">
                     <strong>Voto: </strong>
                     <span class="star" v-for="(stella, j) in Math.ceil(info.vote_average / 2)" :key="j">
@@ -21,7 +20,8 @@
                     <span class="text-language" v-else>{{info.original_language}}</span>
                 </div>
                 <p class="descrizione" v-if="info.overview">
-                    <strong>Descrizione:</strong> {{info.overview}}
+                    <strong>Descrizione:</strong>
+                    {{info.overview}}
                 </p>
             </div>
         </div>
@@ -61,8 +61,12 @@ export default {
 .card {
     overflow: hidden;
     font-size: 14px;
+    aspect-ratio: 2/3;
+
     .container-card {
         position: relative;
+        height: 100%;
+        width: 100%;
     }
     .flag-language {
         height: 16px;
@@ -72,7 +76,7 @@ export default {
         
     }
     .poster {
-        width: 100%;
+        height: 100%;
     }
     &:hover {
         .poster {
@@ -83,6 +87,11 @@ export default {
             > * {
                 margin-top: 8px;
                 margin-bottom: 8px;
+            }
+            mark {
+                font-weight: 500;
+                background: transparent;
+                color: white;
             }
             background: rgba($color: #000, $alpha: 0.7);
             padding: 15px;
@@ -116,12 +125,12 @@ export default {
             }
             .descrizione {
                 text-align: justify;
-                word-wrap: break-word;
             }
         }
     }
     .no-poster {
-        height: 420px; // da sistemare
+        // height: 420px; // da sistemare
+        aspect-ratio: 2/3;
         display: flex;
         align-items: center;
         justify-content: center;
