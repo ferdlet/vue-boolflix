@@ -14,6 +14,8 @@
                         &#9733;
                     </span>
                 </div>
+                <div v-if="info.release_date"><strong>Anno: </strong>{{info.release_date.substr(0, 4)}}</div>
+                <div v-else><strong>Anno: </strong>{{info.first_air_date.substr(0, 4).substr(0, 4)}}</div>
                 <div class="language">
                     <strong>Lingua </strong>
                     <img class="flag-language" v-if="dataShared.languageFlags.includes(info.original_language)" :lingua="languageFlag(info.original_language)" :src="flag" :alt="info.original_language">
@@ -79,9 +81,9 @@ export default {
         height: 100%;
     }
     &:hover {
+        scale: 1.1;
         .poster {
             display: block;
-            scale: 1.1;
         }
         .item-info{
             > * {

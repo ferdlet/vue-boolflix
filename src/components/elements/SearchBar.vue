@@ -1,7 +1,7 @@
 <template>
     <div class="search-bar">
         <form @submit.prevent="ricerca()">
-            <input type="text" v-model="dataShared.inputRicerca">
+            <input type="text" v-model="dataShared.inputRicerca" placeholder="Cerca">
             <button>Ricerca</button>
         </form>
     </div>
@@ -63,6 +63,10 @@ form {
 
 input {
     padding: 5px 8px;
+    background: transparent;
+    color: white;
+    border: 2px solid grey;
+    
 }
 
 button {

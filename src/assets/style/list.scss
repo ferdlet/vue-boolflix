@@ -14,34 +14,48 @@
             margin: 30px 15px;
             width: calc(100% / 1 - 30px);
         }
+
+    }
         @media screen and (min-width: 576px) {
-            li {
-                width: calc(100% / 2 - 30px); 
+            ul {
+                li {
+                    width: calc(100% / 2 - 30px); 
+                }
             }
         }
         
         @media screen and (min-width: 768px) {
-            li {
-                width: calc(100% / 3 - 30px); 
+            ul {
+                li {
+                    width: calc(100% / 3 - 30px); 
+                }
             }
         }
 
         @media screen and (min-width: 992px) {
-            li {
-                width: calc(100% / 4 - 30px); 
+            ul {
+                flex-wrap: nowrap;
+                overflow-y: hidden;
+                overflow-x: auto;
+                li {
+                    width: calc(100% / 4 - 30px); 
+                }
             }
         }
 
         @media screen and (min-width: 1200px) {
-            li {
-                width: calc(100% / 5 - 30px); 
+            ul {
+                li {
+                    width: calc(100% / 5 - 30px); 
+                }
             }
         }
 
         @media screen and (min-width: 1500px) {
-            li {
-                width: calc(100% / 6 - 30px); 
+            ul {
+                li {
+                    width: calc(100% / 6 - 30px); 
+                }
             }
         }
-    }
 }
