@@ -1,18 +1,18 @@
 <template>
     <header>
         <div>
-            <a href="#">
+            <a @click.prevent="dataShared.SeriesList = false, dataShared.FilmsList = false" href="#">
                 <img src="../../assets/img/netflix-logo.png" alt="logo BoolFlix">
             </a>
             <ul>
                 <li>
-                    <a href="#">Home</a>
+                    <a @click.prevent="dataShared.SeriesList = false, dataShared.FilmsList = false" href="#">Home</a>
                 </li>
                 <li>
-                    <a href="#">Serie TV</a>
+                    <a @click.prevent="dataShared.SeriesList = true, dataShared.FilmsList = false" href="#">Serie TV</a>
                 </li>
                 <li>
-                    <a href="#">Film</a>
+                    <a @click.prevent="dataShared.SeriesList = false, dataShared.FilmsList = true" href="#">Film</a>
                 </li>
             </ul>            
         </div>
@@ -22,9 +22,15 @@
 
 <script>
 import SearchBar from '../elements/SearchBar.vue';
+import dataShared from '../../share/dataShared';
 
 export default {
     name: 'Header',
+    data() {
+        return {
+            dataShared,
+        }
+    },
     components: {
         SearchBar
     }

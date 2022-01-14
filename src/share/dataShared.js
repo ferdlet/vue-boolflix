@@ -6,6 +6,8 @@ export default Vue.observable({
     series: '',
     apiKey: 'a4a9b8d54eb726132cc1223964c218f1',
     languageFlags: ['en', 'it', 'es', 'fr', 'de'],
+    SeriesList: false,
+    FilmsList: false,
     flags: {
         en: 'https://cdn-icons-png.flaticon.com/512/197/197374.png',
         it: 'https://cdn-icons-png.flaticon.com/512/197/197626.png', 

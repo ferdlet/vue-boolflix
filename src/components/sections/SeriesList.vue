@@ -2,7 +2,7 @@
     <section id="series" class="list">
         <h2>Serie TV</h2>
         <div class="empty" v-if="dataShared.series.length == 0"><h2>Nessun risultato trovato!</h2></div>
-        <ul v-else>
+        <ul v-else :class="dataShared.SeriesList == false ? 'home' : ''">
             <li v-for="(serie, index) in dataShared.series" :key="index">
                 <Card :info="serie"/>
             </li>
